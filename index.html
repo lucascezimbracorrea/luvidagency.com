@@ -23,6 +23,60 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.1), 0 4px 6px -2px rgba(251, 191, 36, 0.05);
         }
+        /* Efeito de brilho no botão */
+        .glow-on-hover {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .glow-on-hover:before {
+            content: '';
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease;
+            width: 200%;
+            height: 200%;
+            z-index: -1;
+        }
+        .glow-on-hover:hover:before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Animações de entrada */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero com imagem de fundo */
+        .hero-section {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(18, 18, 18, 0.85);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -31,7 +85,6 @@
     <header class="bg-black/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <!-- Replace with your logo SVG or img tag -->
                 <svg class="h-8 w-8 text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
                 </svg>
@@ -42,7 +95,7 @@
                 <a href="#pricing" class="text-gray-300 hover:text-amber-400 transition-colors">Pricing</a>
                 <a href="#contact" class="text-gray-300 hover:text-amber-400 transition-colors">Contact</a>
             </div>
-            <a href="#contact" class="hidden md:inline-block bg-amber-400 hover:bg-amber-500 text-black font-semibold py-2 px-5 rounded-lg transition-transform hover:scale-105">
+            <a href="#contact" class="hidden md:inline-block bg-amber-400 hover:bg-amber-500 text-black font-semibold py-2 px-5 rounded-lg transition-transform hover:scale-105 glow-on-hover">
                 Book a Free Call
             </a>
             <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
@@ -61,16 +114,17 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="py-20 md:py-32">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+        <section class="py-20 md:py-32 hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container mx-auto px-6 text-center hero-content">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-on-scroll">
                     Marketing That <span class="gradient-text">Moves You Forward</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mt-6">
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mt-6 animate-on-scroll" style="transition-delay: 200ms;">
                     We're Luvid Agency, a results-driven digital marketing partner dedicated to growing your brand. We combine creative strategies with data-backed execution to boost your online presence and drive real growth.
                 </p>
-                <div class="mt-10 flex justify-center gap-4">
-                    <a href="#pricing" class="bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 px-8 rounded-lg transition-transform hover:scale-105 text-lg">
+                <div class="mt-10 flex justify-center gap-4 animate-on-scroll" style="transition-delay: 400ms;">
+                    <a href="#pricing" class="bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 px-8 rounded-lg transition-transform hover:scale-105 text-lg glow-on-hover">
                         View Our Plans
                     </a>
                     <a href="#contact" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform hover:scale-105 text-lg">
@@ -83,34 +137,34 @@
         <!-- Services Section -->
         <section id="services" class="py-20 bg-gray-950">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
+                <div class="text-center mb-12 animate-on-scroll">
                     <h2 class="text-3xl md:text-4xl font-bold text-white">Your Complete Digital Growth Toolkit</h2>
                     <p class="mt-4 text-gray-400 max-w-2xl mx-auto">From engaging content to powerful automations, we provide everything you need to succeed online.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Service 1: Marketing & Ads -->
-                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 transition-all duration-300 feature-card">
-                        <div class="bg-amber-400/10 text-amber-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 transition-all duration-300 feature-card flex flex-col overflow-hidden animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=800&auto=format&fit=crop" alt="[Imagem de uma equipe de marketing em uma reunião de estratégia]" class="h-48 w-full object-cover">
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Marketing & Ads Management</h3>
+                            <p class="text-gray-400 flex-grow">Comprehensive social media, content creation, and performance advertising campaigns designed to build your brand and convert your audience.</p>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Marketing & Ads Management</h3>
-                        <p class="text-gray-400">Comprehensive social media, content creation, and performance advertising campaigns designed to build your brand and convert your audience.</p>
                     </div>
                     <!-- Service 2: Conversational AI -->
-                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 transition-all duration-300 feature-card">
-                         <div class="bg-amber-400/10 text-amber-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Conversational AI Suite</h3>
-                        <p class="text-gray-400">Automate customer interactions with intelligent WhatsApp bots and AI-powered voice IVR systems. Improve efficiency and provide 24/7 support.</p>
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 transition-all duration-300 feature-card flex flex-col overflow-hidden animate-on-scroll" style="transition-delay: 200ms;">
+                         <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=800&auto=format&fit=crop" alt="[Imagem de um robô amigável interagindo com uma interface digital]" class="h-48 w-full object-cover">
+                         <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Conversational AI Suite</h3>
+                            <p class="text-gray-400 flex-grow">Automate customer interactions with intelligent WhatsApp bots and AI-powered voice IVR systems. Improve efficiency and provide 24/7 support.</p>
+                         </div>
                     </div>
                     <!-- Service 3: Analytics & Strategy -->
-                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 transition-all duration-300 feature-card">
-                         <div class="bg-amber-400/10 text-amber-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m-6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Analytics & Optimization</h3>
-                        <p class="text-gray-400">We set up advanced tracking (GA4, UTMs) and provide detailed reports, constantly optimizing your campaigns for peak performance and maximum ROI.</p>
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 transition-all duration-300 feature-card flex flex-col overflow-hidden animate-on-scroll" style="transition-delay: 400ms;">
+                         <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop" alt="[Imagem de um painel de análise de dados em uma tela de computador]" class="h-48 w-full object-cover">
+                         <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Analytics & Optimization</h3>
+                            <p class="text-gray-400 flex-grow">We set up advanced tracking (GA4, UTMs) and provide detailed reports, constantly optimizing your campaigns for peak performance and maximum ROI.</p>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -119,17 +173,14 @@
         <!-- Pricing Section -->
         <section id="pricing" class="py-20">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
+                <div class="text-center mb-12 animate-on-scroll">
                     <h2 class="text-3xl md:text-4xl font-bold text-white">Transparent Pricing for Your Growth</h2>
                     <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Choose the plan that fits your business goals. No hidden fees, just clear results.</p>
                 </div>
-
-                <!-- Marketing & Ads Plans -->
-                <h3 class="text-2xl font-bold text-white text-center mb-8">Marketing & Ads Management Plans</h3>
+                <h3 class="text-2xl font-bold text-white text-center mb-8 animate-on-scroll">Marketing & Ads Management Plans</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    
                     <!-- Plan: Starter -->
-                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col">
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col animate-on-scroll">
                         <h4 class="text-xl font-bold text-white">Starter 💡</h4>
                         <p class="mt-2 text-4xl font-extrabold text-white">$800<span class="text-base font-medium text-gray-400">/month</span></p>
                         <ul class="mt-6 space-y-4 text-gray-300 flex-grow">
@@ -143,9 +194,8 @@
                         </ul>
                         <a href="#contact" class="mt-8 block w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 text-center rounded-lg">Get Started</a>
                     </div>
-
                     <!-- Plan: Essential -->
-                    <div class="bg-gray-900 p-6 rounded-xl border-2 border-amber-400 flex flex-col relative">
+                    <div class="bg-gray-900 p-6 rounded-xl border-2 border-amber-400 flex flex-col relative animate-on-scroll" style="transition-delay: 200ms;">
                         <span class="bg-amber-400 text-black text-xs font-bold px-3 py-1 rounded-full absolute -top-3 right-4">POPULAR</span>
                         <h4 class="text-xl font-bold text-white">Essential 🤖</h4>
                         <p class="mt-2 text-4xl font-extrabold text-white">$1,000<span class="text-base font-medium text-gray-400">/month</span></p>
@@ -158,11 +208,10 @@
                             <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Reports: Growth & engagement</li>
                             <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Meetings: 1/month</li>
                         </ul>
-                        <a href="#contact" class="mt-8 block w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 text-center rounded-lg">Choose Plan</a>
+                        <a href="#contact" class="mt-8 block w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 text-center rounded-lg glow-on-hover">Choose Plan</a>
                     </div>
-                    
                     <!-- Plan: Complete -->
-                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col">
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col animate-on-scroll" style="transition-delay: 400ms;">
                         <h4 class="text-xl font-bold text-white">Complete 🎥</h4>
                         <p class="mt-2 text-4xl font-extrabold text-white">$1,200<span class="text-base font-medium text-gray-400">/month</span></p>
                         <ul class="mt-6 space-y-4 text-gray-300 flex-grow">
@@ -176,9 +225,8 @@
                         </ul>
                         <a href="#contact" class="mt-8 block w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 text-center rounded-lg">Get Started</a>
                     </div>
-                    
                     <!-- Plan: Performance Ads -->
-                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col">
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col animate-on-scroll" style="transition-delay: 600ms;">
                         <h4 class="text-xl font-bold text-white">Performance Ads 📈</h4>
                         <p class="mt-2 text-4xl font-extrabold text-white">$1,700<span class="text-base font-medium text-gray-400">/month</span></p>
                         <ul class="mt-6 space-y-4 text-gray-300 flex-grow">
@@ -194,7 +242,7 @@
                 </div>
 
                 <!-- Performance Bonus -->
-                <div class="mt-12 bg-gray-900/50 border border-dashed border-gray-700 rounded-xl p-6 max-w-3xl mx-auto text-center">
+                <div class="mt-12 bg-gray-900/50 border border-dashed border-gray-700 rounded-xl p-6 max-w-3xl mx-auto text-center animate-on-scroll">
                     <h4 class="font-bold text-lg text-amber-400">💸 Optional Performance Bonus</h4>
                     <p class="text-gray-300 mt-2">Supercharge your growth. We're so confident, we'll tie our success to yours.</p>
                     <div class="mt-4 flex flex-col sm:flex-row justify-center gap-4 text-left">
@@ -212,11 +260,11 @@
 
                 <!-- Conversational AI Pack -->
                 <div class="mt-20 pt-16 border-t border-gray-800">
-                    <div class="text-center mb-12">
+                    <div class="text-center mb-12 animate-on-scroll">
                         <h3 class="text-2xl font-bold text-white">Conversational AI Pack</h3>
                         <p class="mt-2 text-gray-400">Automate and elevate your customer service.</p>
                     </div>
-                    <div class="bg-gray-900 rounded-xl border border-gray-800 max-w-4xl mx-auto overflow-hidden md:flex">
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 max-w-4xl mx-auto overflow-hidden md:flex animate-on-scroll">
                         <div class="p-8 md:w-1/2">
                             <h4 class="text-xl font-bold text-white mb-2">AI Conversations Suite 🤖📞</h4>
                             <p class="text-gray-400 mb-6">A powerful, all-in-one solution to manage customer queries, route conversations, and integrate with your existing tools, 24/7.</p>
@@ -230,7 +278,7 @@
                         <div class="p-8 md:w-1/2 bg-black flex flex-col justify-center text-center md:text-left">
                              <p class="text-lg text-gray-400">Starting at</p>
                              <p class="mt-2 text-5xl font-extrabold text-white">$2,500<span class="text-xl font-medium text-gray-400">/month</span></p>
-                             <a href="#contact" class="mt-8 block w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 text-center rounded-lg">Request a Demo</a>
+                             <a href="#contact" class="mt-8 block w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 text-center rounded-lg glow-on-hover">Request a Demo</a>
                         </div>
                     </div>
                 </div>
@@ -240,15 +288,14 @@
 
         <!-- Contact Section -->
         <section id="contact" class="py-20 bg-gray-950">
-            <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to Move Your Business Forward?</h2>
-                 <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Let's talk about your goals. Schedule a free, no-obligation consultation call with one of our marketing experts today.</p>
+            <div class="container mx-auto px-6 text-center animate-on-scroll">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to move your business forward?</h2>
+                 <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Let's talk about your goals. Get in touch with our experts to answer your questions.</p>
                  <div class="mt-8">
-                     <a href="mailto:hello@luvidagency.com" class="bg-amber-400 hover:bg-amber-500 text-black font-bold py-4 px-10 rounded-lg transition-transform hover:scale-105 text-xl inline-block">
-                         Schedule Your Free Call
+                     <a href="https://www.linkedin.com/company/108841332/" target="_blank" rel="noopener noreferrer" class="bg-amber-400 hover:bg-amber-500 text-black font-bold py-4 px-10 rounded-lg transition-transform hover:scale-105 text-xl inline-block glow-on-hover">
+                         Contact Us on LinkedIn
                      </a>
                  </div>
-                 <p class="mt-4 text-sm text-gray-500">Or email us directly at <a href="mailto:hello@luvidagency.com" class="underline hover:text-amber-400">hello@luvidagency.com</a></p>
             </div>
         </section>
 
@@ -275,6 +322,21 @@
     </footer>
 
     <script>
+        // --- Animação ao rolar a página ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+        elementsToAnimate.forEach(el => observer.observe(el));
+
+        // --- Menu Mobile ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -282,7 +344,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close menu when a link is clicked
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -291,5 +352,3 @@
     </script>
 </body>
 </html>
-
-
