@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luvid Agency | Marketing That Moves You Forward</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #E5E5E5; /* Light text */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #facc15, #f59e0b); /* Yellow-400 to Amber-500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.1), 0 4px 6px -2px rgba(251, 191, 36, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-black/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Replace with your logo SVG or img tag -->
+                <svg class="h-8 w-8 text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                </svg>
+                <span class="text-2xl font-bold text-white">Luvid Agency</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-gray-300 hover:text-amber-400 transition-colors">Services</a>
+                <a href="#pricing" class="text-gray-300 hover:text-amber-400 transition-colors">Pricing</a>
+                <a href="#contact" class="text-gray-300 hover:text-amber-400 transition-colors">Contact</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-block bg-amber-400 hover:bg-amber-500 text-black font-semibold py-2 px-5 rounded-lg transition-transform hover:scale-105">
+                Book a Free Call
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#services" class="block py-2 text-gray-300 hover:text-amber-400">Services</a>
+            <a href="#pricing" class="block py-2 text-gray-300 hover:text-amber-400">Pricing</a>
+            <a href="#contact" class="block py-2 text-gray-300 hover:text-amber-400">Contact</a>
+            <a href="#contact" class="mt-2 block bg-amber-400 text-center hover:bg-amber-500 text-black font-semibold py-2 px-4 rounded-lg">Book a Free Call</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Marketing That <span class="gradient-text">Moves You Forward</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mt-6">
+                    We're Luvid Agency, a results-driven digital marketing partner dedicated to growing your brand. We combine creative strategies with data-backed execution to boost your online presence and drive real growth.
+                </p>
+                <div class="mt-10 flex justify-center gap-4">
+                    <a href="#pricing" class="bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 px-8 rounded-lg transition-transform hover:scale-105 text-lg">
+                        View Our Plans
+                    </a>
+                    <a href="#contact" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform hover:scale-105 text-lg">
+                        Get a Custom Quote
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-950">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Your Complete Digital Growth Toolkit</h2>
+                    <p class="mt-4 text-gray-400 max-w-2xl mx-auto">From engaging content to powerful automations, we provide everything you need to succeed online.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1: Marketing & Ads -->
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 transition-all duration-300 feature-card">
+                        <div class="bg-amber-400/10 text-amber-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Marketing & Ads Management</h3>
+                        <p class="text-gray-400">Comprehensive social media, content creation, and performance advertising campaigns designed to build your brand and convert your audience.</p>
+                    </div>
+                    <!-- Service 2: Conversational AI -->
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 transition-all duration-300 feature-card">
+                         <div class="bg-amber-400/10 text-amber-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Conversational AI Suite</h3>
+                        <p class="text-gray-400">Automate customer interactions with intelligent WhatsApp bots and AI-powered voice IVR systems. Improve efficiency and provide 24/7 support.</p>
+                    </div>
+                    <!-- Service 3: Analytics & Strategy -->
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 transition-all duration-300 feature-card">
+                         <div class="bg-amber-400/10 text-amber-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m-6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Analytics & Optimization</h3>
+                        <p class="text-gray-400">We set up advanced tracking (GA4, UTMs) and provide detailed reports, constantly optimizing your campaigns for peak performance and maximum ROI.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Transparent Pricing for Your Growth</h2>
+                    <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Choose the plan that fits your business goals. No hidden fees, just clear results.</p>
+                </div>
+
+                <!-- Marketing & Ads Plans -->
+                <h3 class="text-2xl font-bold text-white text-center mb-8">Marketing & Ads Management Plans</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Plan: Starter -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col">
+                        <h4 class="text-xl font-bold text-white">Starter 💡</h4>
+                        <p class="mt-2 text-4xl font-extrabold text-white">$800<span class="text-base font-medium text-gray-400">/month</span></p>
+                        <ul class="mt-6 space-y-4 text-gray-300 flex-grow">
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>1 Social Post/week</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>1 Blog Post/week</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Visuals: Canva templates</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Community Engagement: 1x/week</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Content Calendar: WhatsApp/doc</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Reports: Monthly summary</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Meetings: Async (WhatsApp)</li>
+                        </ul>
+                        <a href="#contact" class="mt-8 block w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 text-center rounded-lg">Get Started</a>
+                    </div>
+
+                    <!-- Plan: Essential -->
+                    <div class="bg-gray-900 p-6 rounded-xl border-2 border-amber-400 flex flex-col relative">
+                        <span class="bg-amber-400 text-black text-xs font-bold px-3 py-1 rounded-full absolute -top-3 right-4">POPULAR</span>
+                        <h4 class="text-xl font-bold text-white">Essential 🤖</h4>
+                        <p class="mt-2 text-4xl font-extrabold text-white">$1,000<span class="text-base font-medium text-gray-400">/month</span></p>
+                        <ul class="mt-6 space-y-4 text-gray-300 flex-grow">
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>3 Social Posts/week</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>2 Blog Posts/week</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Visuals: Branded + AI videos</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Community Engagement: 2x/week</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Content Calendar: Google Doc</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Reports: Growth & engagement</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Meetings: 1/month</li>
+                        </ul>
+                        <a href="#contact" class="mt-8 block w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 text-center rounded-lg">Choose Plan</a>
+                    </div>
+                    
+                    <!-- Plan: Complete -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col">
+                        <h4 class="text-xl font-bold text-white">Complete 🎥</h4>
+                        <p class="mt-2 text-4xl font-extrabold text-white">$1,200<span class="text-base font-medium text-gray-400">/month</span></p>
+                        <ul class="mt-6 space-y-4 text-gray-300 flex-grow">
+                             <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>5 Social Posts/week</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>3 Blog Posts/week</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Visuals: Custom + personal videos</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Community Engagement: Daily</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Content Calendar: Strategic calendar</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Reports: Full analytics</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Meetings: Weekly</li>
+                        </ul>
+                        <a href="#contact" class="mt-8 block w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 text-center rounded-lg">Get Started</a>
+                    </div>
+                    
+                    <!-- Plan: Performance Ads -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col">
+                        <h4 class="text-xl font-bold text-white">Performance Ads 📈</h4>
+                        <p class="mt-2 text-4xl font-extrabold text-white">$1,700<span class="text-base font-medium text-gray-400">/month</span></p>
+                        <ul class="mt-6 space-y-4 text-gray-300 flex-grow">
+                           <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Ad creatives support</li>
+                           <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Campaigns: Google, Meta, LinkedIn</li>
+                           <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Analytics: GA4 setup + UTM tracking</li>
+                           <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Optimization: Weekly ad adjustments</li>
+                           <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Reports: Performance KPIs</li>
+                           <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Meetings: 1/month</li>
+                        </ul>
+                        <a href="#contact" class="mt-8 block w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 text-center rounded-lg">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Performance Bonus -->
+                <div class="mt-12 bg-gray-900/50 border border-dashed border-gray-700 rounded-xl p-6 max-w-3xl mx-auto text-center">
+                    <h4 class="font-bold text-lg text-amber-400">💸 Optional Performance Bonus</h4>
+                    <p class="text-gray-300 mt-2">Supercharge your growth. We're so confident, we'll tie our success to yours.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row justify-center gap-4 text-left">
+                        <div class="bg-gray-900 p-4 rounded-lg flex-1">
+                            <p class="font-bold text-white">+$500 USD</p>
+                            <p class="text-gray-400 text-sm">if you gain 500+ new followers in a month.</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg flex-1">
+                            <p class="font-bold text-white">+$1,000 USD</p>
+                            <p class="text-gray-400 text-sm">if you gain 1,000+ new followers in a month.</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-3">(Only the highest bonus applies each month)</p>
+                </div>
+
+                <!-- Conversational AI Pack -->
+                <div class="mt-20 pt-16 border-t border-gray-800">
+                    <div class="text-center mb-12">
+                        <h3 class="text-2xl font-bold text-white">Conversational AI Pack</h3>
+                        <p class="mt-2 text-gray-400">Automate and elevate your customer service.</p>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 max-w-4xl mx-auto overflow-hidden md:flex">
+                        <div class="p-8 md:w-1/2">
+                            <h4 class="text-xl font-bold text-white mb-2">AI Conversations Suite 🤖📞</h4>
+                            <p class="text-gray-400 mb-6">A powerful, all-in-one solution to manage customer queries, route conversations, and integrate with your existing tools, 24/7.</p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" /><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" /></svg>WhatsApp Bot with custom logic</li>
+                                <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" /><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" /></svg>PBX IVR with AI-powered voice</li>
+                                <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" /><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" /></svg>Full CRM, email, and API integrations</li>
+                                <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" /><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" /></svg>Live transfer to human agents</li>
+                            </ul>
+                        </div>
+                        <div class="p-8 md:w-1/2 bg-black flex flex-col justify-center text-center md:text-left">
+                             <p class="text-lg text-gray-400">Starting at</p>
+                             <p class="mt-2 text-5xl font-extrabold text-white">$2,500<span class="text-xl font-medium text-gray-400">/month</span></p>
+                             <a href="#contact" class="mt-8 block w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 text-center rounded-lg">Request a Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-950">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to Move Your Business Forward?</h2>
+                 <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Let's talk about your goals. Schedule a free, no-obligation consultation call with one of our marketing experts today.</p>
+                 <div class="mt-8">
+                     <a href="mailto:hello@luvidagency.com" class="bg-amber-400 hover:bg-amber-500 text-black font-bold py-4 px-10 rounded-lg transition-transform hover:scale-105 text-xl inline-block">
+                         Schedule Your Free Call
+                     </a>
+                 </div>
+                 <p class="mt-4 text-sm text-gray-500">Or email us directly at <a href="mailto:hello@luvidagency.com" class="underline hover:text-amber-400">hello@luvidagency.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div>
+                     <div class="flex items-center justify-center md:justify-start space-x-3">
+                        <svg class="h-8 w-8 text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                        </svg>
+                        <span class="text-2xl font-bold text-white">Luvid Agency</span>
+                    </div>
+                     <p class="mt-2 text-gray-400">Marketing that moves you forward.</p>
+                </div>
+                <div class="mt-6 md:mt-0 text-gray-400">
+                    &copy; 2024 Luvid Agency. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
