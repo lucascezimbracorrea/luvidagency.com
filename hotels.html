@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Marketing Agency | Fill Your Rooms & Boost Direct Bookings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #E5E5E5;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #facc15, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.1), 0 4px 6px -2px rgba(251, 191, 36, 0.05);
+        }
+        .glow-on-hover {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .glow-on-hover:before {
+            content: '';
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease;
+            width: 200%;
+            height: 200%;
+            z-index: -1;
+        }
+        .glow-on-hover:hover:before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-section {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(18, 18, 18, 0.85);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-black/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <svg class="h-8 w-8 text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                </svg>
+                <span class="text-2xl font-bold text-white">Luvid Agency</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-gray-300 hover:text-amber-400 transition-colors">Services</a>
+                <a href="#pricing" class="text-gray-300 hover:text-amber-400 transition-colors">Pricing</a>
+                <a href="#contact" class="text-gray-300 hover:text-amber-400 transition-colors">Contact</a>
+            </div>
+            <a href="https://www.linkedin.com/company/108841332/" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block bg-amber-400 hover:bg-amber-500 text-black font-semibold py-2 px-5 rounded-lg transition-transform hover:scale-105 glow-on-hover">
+                Book a Free Call
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#services" class="block py-2 text-gray-300 hover:text-amber-400">Services</a>
+            <a href="#pricing" class="block py-2 text-gray-300 hover:text-amber-400">Pricing</a>
+            <a href="#contact" class="block py-2 text-gray-300 hover:text-amber-400">Contact</a>
+            <a href="https://www.linkedin.com/company/108841332/" target="_blank" rel="noopener noreferrer" class="mt-2 block bg-amber-400 text-center hover:bg-amber-500 text-black font-semibold py-2 px-4 rounded-lg">Book a Free Call</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container mx-auto px-6 text-center hero-content">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-on-scroll">
+                    Fill Your Rooms & <span class="gradient-text">Beat Airbnb</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mt-6 animate-on-scroll" style="transition-delay: 200ms;">
+                    Stop losing bookings to Airbnb and OTAs. We help hotels increase direct bookings by 40%, boost occupancy rates, and build a loyal guest base through strategic digital marketing.
+                </p>
+                <div class="mt-10 flex justify-center gap-4 animate-on-scroll" style="transition-delay: 400ms;">
+                    <a href="#pricing" class="bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 px-8 rounded-lg transition-transform hover:scale-105 text-lg glow-on-hover">
+                        View Hotel Plans
+                    </a>
+                    <a href="https://www.linkedin.com/company/108841332/" target="_blank" rel="noopener noreferrer" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition-transform hover:scale-105 text-lg">
+                        Get Hotel Marketing Audit
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-950">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Hotel Marketing That Actually Works</h2>
+                    <p class="mt-4 text-gray-400 max-w-2xl mx-auto">From reputation management to direct booking campaigns, we help hotels compete and win in the digital space.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1: Hotel Marketing -->
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 transition-all duration-300 feature-card flex flex-col overflow-hidden animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=800&auto=format&fit=crop" alt="Hotel marketing team working on campaigns" class="h-48 w-full object-cover">
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Hotel Digital Marketing</h3>
+                            <p class="text-gray-400 flex-grow">Direct booking campaigns, seasonal promotions, and guest acquisition strategies that reduce OTA dependency and increase profit margins.</p>
+                        </div>
+                    </div>
+                    <!-- Service 2: Reputation Management -->
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 transition-all duration-300 feature-card flex flex-col overflow-hidden animate-on-scroll" style="transition-delay: 200ms;">
+                         <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=800&auto=format&fit=crop" alt="Hotel review management dashboard" class="h-48 w-full object-cover">
+                         <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Reputation & Review Management</h3>
+                            <p class="text-gray-400 flex-grow">Monitor and respond to reviews across all platforms, implement guest feedback systems, and build a stellar online reputation that drives bookings.</p>
+                         </div>
+                    </div>
+                    <!-- Service 3: Hotel Analytics -->
+                    <div class="bg-gray-900 rounded-xl border border-gray-800 transition-all duration-300 feature-card flex flex-col overflow-hidden animate-on-scroll" style="transition-delay: 400ms;">
+                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Hotel analytics dashboard showing occupancy rates" class="h-48 w-full object-cover">
+                         <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2">Hotel Performance Analytics</h3>
+                            <p class="text-gray-400 flex-grow">Track occupancy rates, ADR, RevPAR, and guest acquisition costs. Optimize pricing strategies and identify revenue opportunities.</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Hotel Marketing Plans</h2>
+                    <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Choose the plan that fits your hotel size and goals. All plans include industry-specific strategies.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Plan: Essential -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col animate-on-scroll">
+                        <h4 class="text-xl font-bold text-white">Essential 🏨</h4>
+                        <p class="mt-2 text-4xl font-extrabold text-white">$800<span class="text-base font-medium text-gray-400">/month</span></p>
+                        <ul class="mt-6 space-y-4 text-gray-300 flex-grow">
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>2-3 posts per week (Instagram, Facebook, LinkedIn)</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Hotel content & room showcases</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Review monitoring & responses</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Basic occupancy reports</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Monthly strategy call</li>
+                        </ul>
+                        <a href="https://www.linkedin.com/company/108841332/" target="_blank" rel="noopener noreferrer" class="mt-8 block w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 text-center rounded-lg">Get Started</a>
+                    </div>
+                    <!-- Plan: Professional -->
+                    <div class="bg-gray-900 p-6 rounded-xl border-2 border-amber-400 flex flex-col relative animate-on-scroll" style="transition-delay: 200ms;">
+                        <span class="bg-amber-400 text-black text-xs font-bold px-3 py-1 rounded-full absolute -top-3 right-4">POPULAR</span>
+                        <h4 class="text-xl font-bold text-white">Professional 🏨</h4>
+                        <p class="mt-2 text-4xl font-extrabold text-white">$1,500<span class="text-base font-medium text-gray-400">/month</span></p>
+                        <ul class="mt-6 space-y-4 text-gray-300 flex-grow">
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Daily social media management</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Direct booking campaigns</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Guest photo & video content</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Advanced review management</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Occupancy & revenue reports</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Weekly strategy calls</li>
+                        </ul>
+                        <a href="https://www.linkedin.com/company/108841332/" target="_blank" rel="noopener noreferrer" class="mt-8 block w-full bg-amber-400 hover:bg-amber-500 text-black font-semibold py-3 text-center rounded-lg glow-on-hover">Choose Plan</a>
+                    </div>
+                    <!-- Plan: Enterprise -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 flex flex-col animate-on-scroll" style="transition-delay: 400ms;">
+                        <h4 class="text-xl font-bold text-white">Enterprise 🏨</h4>
+                        <p class="mt-2 text-4xl font-extrabold text-white">$2,200<span class="text-base font-medium text-gray-400">/month</span></p>
+                        <ul class="mt-6 space-y-4 text-gray-300 flex-grow">
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Multi-property management</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Advanced paid advertising</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Custom hotel content creation</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Competitor analysis & positioning</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Revenue optimization strategies</li>
+                            <li class="flex items-start"><svg class="h-5 w-5 text-amber-400 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Dedicated account manager</li>
+                        </ul>
+                        <a href="https://www.linkedin.com/company/108841332/" target="_blank" rel="noopener noreferrer" class="mt-8 block w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 text-center rounded-lg">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Hotel Success Metrics -->
+                <div class="mt-12 bg-gray-900/50 border border-dashed border-gray-700 rounded-xl p-6 max-w-4xl mx-auto text-center animate-on-scroll">
+                    <h4 class="font-bold text-lg text-amber-400">🏨 Hotel Success Metrics</h4>
+                    <p class="text-gray-300 mt-2">We track the metrics that matter to your hotel business.</p>
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <p class="font-bold text-white">+40% Direct Bookings</p>
+                            <p class="text-gray-400 text-sm">Average increase in direct bookings vs OTAs</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <p class="font-bold text-white">+25% Occupancy Rate</p>
+                            <p class="text-gray-400 text-sm">Improved room occupancy throughout the year</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <p class="font-bold text-white">+35% ADR Increase</p>
+                            <p class="text-gray-400 text-sm">Higher average daily rates through better positioning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-950">
+            <div class="container mx-auto px-6 text-center animate-on-scroll">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to fill your hotel rooms?</h2>
+                 <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Let's discuss your hotel's marketing challenges and create a strategy that drives direct bookings.</p>
+                 <div class="mt-8">
+                     <a href="https://www.linkedin.com/company/108841332/" target="_blank" rel="noopener noreferrer" class="bg-amber-400 hover:bg-amber-500 text-black font-bold py-4 px-10 rounded-lg transition-transform hover:scale-105 text-xl inline-block glow-on-hover">
+                         Contact Us on LinkedIn
+                     </a>
+                 </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div>
+                     <div class="flex items-center justify-center md:justify-start space-x-3">
+                        <svg class="h-8 w-8 text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                        </svg>
+                        <span class="text-2xl font-bold text-white">Luvid Agency</span>
+                    </div>
+                     <p class="mt-2 text-gray-400">Marketing that moves you forward.</p>
+                </div>
+                <div class="mt-6 md:mt-0 text-gray-400">
+                    &copy; <span id="current-year"></span> Luvid Agency. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Set current year ---
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- Animação ao rolar a página ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+        elementsToAnimate.forEach(el => observer.observe(el));
+
+        // --- Menu Mobile ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
