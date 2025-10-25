@@ -4,6 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luvid Agency | Marketing That Moves You Forward</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31PH0CDNPY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-31PH0CDNPY');
+    </script>
+    
+    <!-- Datadog RUM -->
+    <script>
+      (function(h,o,u,n,d) {
+        h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+        d=o.createElement(u);d.async=1;d.src=n
+        n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+      })(window,document,'script','https://www.datadoghq-browser-agent.com/us5/v6/datadog-rum.js','DD_RUM')
+      window.DD_RUM.onReady(function() {
+        window.DD_RUM.init({
+          clientToken: 'pubd5c0fd509f622eea010de8f49f6fb305',
+          applicationId: '2e70664f-7a3e-4284-a82d-7dc57acde95e',
+          service: 'luvidagency.com',
+          env: 'prod',
+          trackBfcacheViews: true,
+          defaultPrivacyLevel: 'mask-user-input',
+        });
+      })
+    </script>
+    
+    <meta name="description" content="Digital marketing agency specializing in social media, AI automation, and custom software. Boost your business growth with our proven marketing strategies and AI-powered solutions.">
+    <meta name="keywords" content="digital marketing agency, social media marketing, AI automation, custom software development, business growth, marketing strategy">
+    <meta name="author" content="Luvid Agency">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://luvidagency.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://luvidagency.com/">
+    <meta property="og:title" content="Luvid Agency | Marketing That Moves You Forward">
+    <meta property="og:description" content="Digital marketing agency specializing in social media, AI automation, and custom software. Boost your business growth with our proven marketing strategies.">
+    <meta property="og:image" content="https://luvidagency.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://luvidagency.com/">
+    <meta property="twitter:title" content="Luvid Agency | Marketing That Moves You Forward">
+    <meta property="twitter:description" content="Digital marketing agency specializing in social media, AI automation, and custom software. Boost your business growth with our proven marketing strategies.">
+    <meta property="twitter:image" content="https://luvidagency.com/og-image.jpg">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,6 +128,43 @@
             z-index: 2;
         }
     </style>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Luvid Agency",
+        "description": "Digital marketing agency specializing in social media, AI automation, and custom software development",
+        "url": "https://luvidagency.com",
+        "logo": "https://luvidagency.com/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "url": "https://www.linkedin.com/company/108841332/"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/108841332/"
+        ],
+        "service": [
+            {
+                "@type": "Service",
+                "name": "Digital Marketing",
+                "description": "Social media marketing, content creation, and performance advertising campaigns"
+            },
+            {
+                "@type": "Service", 
+                "name": "AI Automation",
+                "description": "WhatsApp bots, AI-powered voice systems, and conversational AI solutions"
+            },
+            {
+                "@type": "Service",
+                "name": "Custom Software Development", 
+                "description": "Custom web and mobile applications, automations, and integrations"
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="antialiased">
 
